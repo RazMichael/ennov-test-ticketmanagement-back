@@ -1,6 +1,6 @@
 # Ticket management application server #
 This application helps users to manage users tasks in form of tickets.
-A ticket have informations (title, description, creator user id, user id, status), and can be assigned to a user.
+A ticket has the following informations (title, description, creator user id, user id, status), and can be assigned to a user.
 
 ## Setting up your local environment ##
 - Java version : **openjdk 21.0.2**
