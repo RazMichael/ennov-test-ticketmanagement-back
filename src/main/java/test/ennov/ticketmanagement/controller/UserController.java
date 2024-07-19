@@ -40,6 +40,10 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * Get all existing users
+     * @return List<UserDTO> : list of existing users
+     */
     @Operation(
             description = "Get all users from database",
             summary = "Get all user",
@@ -66,6 +70,11 @@ public class UserController {
         }
     }
 
+    /**
+     * Get one user tickets by his ID
+     * @param userId ID of the user owning the tickets
+     * @return List<TicketDTO> : list of the user tickets
+     */
     @Operation(
             description = "Get user Tickets",
             summary = "Get user Tickets",
@@ -93,6 +102,11 @@ public class UserController {
 
     }
 
+    /**
+     * Create a new user
+     * @param userToSaveDto user information to save
+     * @return UserDTO : created user
+     */
     @Operation(
             description = "Create a user",
             summary = "Create a user",
@@ -121,6 +135,12 @@ public class UserController {
 
     }
 
+    /**
+     * Update a user by its ID
+     * @param userId ID of the user to update
+     * @param userDto new information of the user
+     * @return UserDTO : updated user
+     */
     @Operation(
             description = "Update user by ID",
             summary = "Update user by ID",

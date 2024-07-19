@@ -2,9 +2,9 @@ package test.ennov.ticketmanagement.service;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import test.ennov.ticketmanagement.model.entity.Ticket;
-import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoDataFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoTicketAccessException;
+import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 
 public interface TicketService extends GenericService<Ticket> {
     Ticket getTicketById(String ticketId, String connectedUserId) throws NoDataFoundException, NoTicketAccessException;

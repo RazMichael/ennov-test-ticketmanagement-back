@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import test.ennov.ticketmanagement.model.dto.TicketDTO;
 import test.ennov.ticketmanagement.model.entity.Ticket;
 import test.ennov.ticketmanagement.service.TicketService;
-import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoDataFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoTicketAccessException;
+import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 import test.ennov.ticketmanagement.utils.mapper.TicketMapper;
 
 import java.util.List;
@@ -40,6 +40,10 @@ public class TicketController {
     @Autowired
     private TicketMapper ticketMapper;
 
+    /**
+     * Get the full list of tickets
+     * @return List<TicketDTO> : full list of tickets
+     */
     @Operation(
             description = "Get all tickets in database",
             summary = "Get all tickets",
@@ -99,6 +103,11 @@ public class TicketController {
         }
     }
 
+    /**
+     * Create new ticket
+     * @param ticketDto ticket to create
+     * @return TicketDTO : created ticket
+     */
     @Operation(
             description = "Create a new ticket",
             summary = "Create a new ticket",
@@ -125,6 +134,13 @@ public class TicketController {
         }
     }
 
+    /**
+     * Update an existing ticket
+     * @param ticketId ticket id to update
+     * @param ticketDto new ticket infos for update
+     * @param connectedUserId id of the user performing the request
+     * @return TicketDTO : ticket updated
+     */
     @Operation(
             description = "Update a ticket by ID - Only the ticket creator or the assignee can edit it",
             summary = "Update a ticket by ID",
@@ -167,6 +183,13 @@ public class TicketController {
         }
     }
 
+    /**
+     * Assign a ticket to another user
+     * @param ticketId id of the ticket to assign
+     * @param userId new ticket assignee
+     * @param connectedUserId id of the user performing the request
+     * @return TicketDTO : the ticket assigned
+     */
     @Operation(
             description = "Assign a ticket to a user - Only the ticket creator or the assignee can assign",
             summary = "Assign a ticket to a user",
@@ -203,6 +226,12 @@ public class TicketController {
         }
     }
 
+    /**
+     * Delete a ticket by its ID
+     * @param ticketId the ID of the ticket to delete
+     * @param connectedUserId id of the user performing the request
+     * @return
+     */
     @Operation(
             description = "Delete a ticket by ID - Only the ticket creator or the assignee can delete it",
             summary = "Delete a ticket by ID",

@@ -8,9 +8,9 @@ import test.ennov.ticketmanagement.model.entity.Ticket;
 import test.ennov.ticketmanagement.model.entity.User;
 import test.ennov.ticketmanagement.repository.TicketRepository;
 import test.ennov.ticketmanagement.repository.UserRepository;
-import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoDataFoundException;
 import test.ennov.ticketmanagement.utils.exceptions.NoTicketAccessException;
+import test.ennov.ticketmanagement.utils.exceptions.UserNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
